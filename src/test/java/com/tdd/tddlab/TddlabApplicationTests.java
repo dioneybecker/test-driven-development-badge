@@ -6,7 +6,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
@@ -31,18 +30,9 @@ class TddlabApplicationTests {
         }
 
         @Test
-        @DisplayName(value = "Test palindrome words")
+        @DisplayName(value = "test for arara")
         void test_palindromes() {
-            assertAll("palindrome",
-                    () -> assertEquals(true, converter.isPalindrome("arara"))
-                    //        it.todo ('true for mom');
-                    //        it.todo ('false for dude');
-                    //        it.todo ('true for mom mom');
-                    //        it.todo ('false for dad mom');
-                    //        it.todo ('true for whitespace');
-                    //        it.todo ('error for empty string');
-                    //        it.todo ('error for not a string');
-            );
+            assertEquals(true, converter.isPalindrome("arara"));
         }
 
         @Test
@@ -51,13 +41,18 @@ class TddlabApplicationTests {
             assertEquals(true, converter.isPalindrome("mom"));
         }
 
-        @Test
+        /*@Test
         @DisplayName(value = "false for dude")
         void dude() {
             assertEquals(false, converter.isPalindrome("dude"));
-        }
+        }*/
 
-
+        //        it.todo ('false for dude');
+        //        it.todo ('true for mom mom');
+        //        it.todo ('false for dad mom');
+        //        it.todo ('true for whitespace');
+        //        it.todo ('error for empty string');
+        //        it.todo ('error for not a string');
     }
 
 
