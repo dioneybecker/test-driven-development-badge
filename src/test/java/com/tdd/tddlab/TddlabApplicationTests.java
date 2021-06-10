@@ -6,7 +6,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
+import java.security.InvalidParameterException;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
 //@SpringBootTest
@@ -60,14 +63,16 @@ class TddlabApplicationTests {
         }
 
         @Test
-        @DisplayName(value = "false for whitespace")
+        @DisplayName(value = "throws exception for whitespace")
         void whitespace() {
-            assertEquals(false, converter.isPalindrome(" "));
+            assertThrows(InvalidParameterException.class, () -> converter.isPalindrome("    "));
         }
 
-        //        it.todo ('true for whitespace');
-        //        it.todo ('error for empty string');
-        //        it.todo ('error for not a string');
+        @Test
+        @DisplayName(value = "throws exception for empty string")
+        void empty_string() {
+            assertThrows(InvalidParameterException.class, () -> converter.isPalindrome(""));
+        }
     }
 
 

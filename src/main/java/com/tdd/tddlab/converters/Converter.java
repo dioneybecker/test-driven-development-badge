@@ -1,5 +1,7 @@
 package com.tdd.tddlab.converters;
 
+import java.security.InvalidParameterException;
+
 public class Converter {
 
     public int fahrenheit2Celsius(int fahrenheit) {
@@ -8,7 +10,7 @@ public class Converter {
 
     public boolean isPalindrome(String word) {
         if(word.trim().equals(""))
-            return false;
+            throw new InvalidParameterException();
 
         String inverse = new StringBuffer(word).reverse().toString();
         if(word.equalsIgnoreCase(inverse))
