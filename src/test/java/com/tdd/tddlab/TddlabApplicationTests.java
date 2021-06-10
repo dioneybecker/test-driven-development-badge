@@ -1,8 +1,12 @@
 package com.tdd.tddlab;
 
 import com.tdd.tddlab.converters.Converter;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
@@ -11,13 +15,51 @@ class TddlabApplicationTests {
 
     Converter converter;
 
-
-
     @DisplayName(value = "canary test")
     @Test
     void contextLoads() {
         //assertEquals(true, true);
     }
+
+    @Nested
+    @DisplayName(value = "Test Palindrome")
+    class palindrome {
+
+        @BeforeEach
+        void _initialize() {
+            converter = new Converter();
+        }
+
+        @Test
+        @DisplayName(value = "Test palindrome words")
+        void test_palindromes() {
+            assertAll("palindrome",
+                    () -> assertEquals(true, converter.isPalindrome("arara"))
+                    //        it.todo ('true for mom');
+                    //        it.todo ('false for dude');
+                    //        it.todo ('true for mom mom');
+                    //        it.todo ('false for dad mom');
+                    //        it.todo ('true for whitespace');
+                    //        it.todo ('error for empty string');
+                    //        it.todo ('error for not a string');
+            );
+        }
+
+        @Test
+        @DisplayName(value = "true for mom")
+        void mom() {
+            assertEquals(true, converter.isPalindrome("mom"));
+        }
+
+        @Test
+        @DisplayName(value = "false for dude")
+        void dude() {
+            assertEquals(false, converter.isPalindrome("dude"));
+        }
+
+
+    }
+
 
     @Nested
     @DisplayName(value = "fahrenheit to celsius converter behaves as follows")
