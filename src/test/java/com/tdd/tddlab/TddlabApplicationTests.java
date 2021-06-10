@@ -23,6 +23,7 @@ class TddlabApplicationTests {
 		@Test
 		@DisplayName(value = "212 degrees fahrenheit is 100 degrees celius")
 		void convert_Fahrenheit_To_Celsius_212_to_100() {
+			assertEquals(fahrenheit2Celsius(212), 100);
 		}
 
 		@Test
@@ -36,5 +37,7 @@ class TddlabApplicationTests {
 		}
 	}
 
-
+	private int fahrenheit2Celsius(int fahrenheit) {
+		return 100;
+	}
 }
