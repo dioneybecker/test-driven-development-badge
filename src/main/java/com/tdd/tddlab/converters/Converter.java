@@ -7,6 +7,9 @@ public class Converter {
     }
 
     public boolean isPalindrome(String word) {
+        if(word.trim().equals(""))
+            return false;
+
         String inverse = new StringBuffer(word).reverse().toString();
         if(word.equalsIgnoreCase(inverse))
             return true;

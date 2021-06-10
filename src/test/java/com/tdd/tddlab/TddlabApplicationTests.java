@@ -60,9 +60,9 @@ class TddlabApplicationTests {
         }
 
         @Test
-        @DisplayName(value = "true for whitespace")
+        @DisplayName(value = "false for whitespace")
         void whitespace() {
-            assertEquals(true, converter.isPalindrome(" "));
+            assertEquals(false, converter.isPalindrome(" "));
         }
 
         //        it.todo ('true for whitespace');
