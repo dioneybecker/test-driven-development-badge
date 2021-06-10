@@ -41,15 +41,30 @@ class TddlabApplicationTests {
             assertEquals(true, converter.isPalindrome("mom"));
         }
 
-        /*@Test
+        @Test
         @DisplayName(value = "false for dude")
         void dude() {
             assertEquals(false, converter.isPalindrome("dude"));
-        }*/
+        }
 
-        //        it.todo ('false for dude');
-        //        it.todo ('true for mom mom');
-        //        it.todo ('false for dad mom');
+        @Test
+        @DisplayName(value = "true for mom mom")
+        void mom_mom() {
+            assertEquals(true, converter.isPalindrome("mom mom"));
+        }
+
+        @Test
+        @DisplayName(value = "false for dad mom")
+        void dad_mom() {
+            assertEquals(false, converter.isPalindrome("dad mom"));
+        }
+
+        @Test
+        @DisplayName(value = "true for whitespace")
+        void whitespace() {
+            assertEquals(true, converter.isPalindrome(" "));
+        }
+
         //        it.todo ('true for whitespace');
         //        it.todo ('error for empty string');
         //        it.todo ('error for not a string');
