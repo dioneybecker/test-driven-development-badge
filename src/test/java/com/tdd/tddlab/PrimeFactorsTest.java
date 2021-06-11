@@ -40,8 +40,11 @@ public class PrimeFactorsTest {
         void test2(){
             assertTrue(Arrays.equals(primeFactors.findPrimeFactorsFor(2), new int[] { 2 }));
         }
-        // TODO: for 2 return [2]
-        // TODO: for 3 return [3]
+        @Test
+        @DisplayName(value = "for 3 return [3]")
+        void test3(){
+            assertTrue(Arrays.equals(primeFactors.findPrimeFactorsFor(3), new int[] { 3 }));
+        }
         // TODO: for 4 return [2, 2]
     }
 }
