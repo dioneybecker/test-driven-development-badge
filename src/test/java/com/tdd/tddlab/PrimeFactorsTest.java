@@ -8,8 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PrimeFactorsTest {
 
@@ -32,20 +31,26 @@ public class PrimeFactorsTest {
         @Test
         @DisplayName(value = "for 1 return []")
         void test1(){
-            assertTrue(Arrays.equals(primeFactors.findPrimeFactorsFor(1), new int[0]));
+            assertArrayEquals(new int[0], primeFactors.findPrimeFactorsFor(1));
         }
 
         @Test
         @DisplayName(value = "for 2 return [2]")
         void test2(){
-            assertTrue(Arrays.equals(primeFactors.findPrimeFactorsFor(2), new int[] { 2 }));
+            assertArrayEquals(new int[] { 2 }, primeFactors.findPrimeFactorsFor(2));
         }
         @Test
         @DisplayName(value = "for 3 return [3]")
         void test3(){
-            assertTrue(Arrays.equals(primeFactors.findPrimeFactorsFor(3), new int[] { 3 }));
+            assertArrayEquals(new int[] { 3 }, primeFactors.findPrimeFactorsFor(3));
         }
-        // TODO: for 4 return [2, 2]
+
+        //for 4 return [2, 2]
+        @Test
+        @DisplayName(value = "for 4 return [2,2]")
+        void test4(){
+            assertArrayEquals(new int[] { 2, 2 }, primeFactors.findPrimeFactorsFor(4));
+        }
 
         // TODO: for 5 return [5]
         // TODO: for 6 return [2,3]
