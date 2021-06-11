@@ -46,5 +46,12 @@ public class PrimeFactorsTest {
             assertTrue(Arrays.equals(primeFactors.findPrimeFactorsFor(3), new int[] { 3 }));
         }
         // TODO: for 4 return [2, 2]
+
+        // TODO: for 5 return [5]
+        // TODO: for 6 return [2,3]
+        // TODO: for 7 return [7]
+        // TODO: for 8 return [2,2,2]
+        // TODO: for 9 return [3,3]
+        // TODO: for 10 return [2,5]
     }
 }
