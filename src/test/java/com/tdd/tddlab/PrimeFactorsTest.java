@@ -79,8 +79,22 @@ public class PrimeFactorsTest {
             assertArrayEquals(new int[] { 2, 2, 2 }, primeFactors.findPrimeFactorsFor(8));
         }
 
-        // TODO: for 8 return [2,2,2]
-        // TODO: for 9 return [3,3]
-        // TODO: for 10 return [2,5]
+        @Test
+        @DisplayName(value = "for 9 return [3,3]")
+        void test9(){
+            assertArrayEquals(new int[] { 3,3 }, primeFactors.findPrimeFactorsFor(9));
+        }
+
+        @Test
+        @DisplayName(value = "for 25 return [5,5]")
+        void test10(){
+            assertArrayEquals(new int[] { 5,5 }, primeFactors.findPrimeFactorsFor(25));
+        }
+
+        @Test
+        @DisplayName(value = "for 864 return [2,2,2,2,2,3,3,3]")
+        void test11(){
+            assertArrayEquals(new int[] { 2,2,2,2,2,3,3,3 }, primeFactors.findPrimeFactorsFor(864));
+        }
     }
 }

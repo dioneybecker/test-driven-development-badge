@@ -6,12 +6,9 @@ public class PrimeFactors {
 
     public int[] findPrimeFactorsFor(int factor) {
         var primeFactors = new ArrayList<Integer>();
-        if(factor > 1) {
-            while(factor % 2 == 0){
-                primeFactors.add(2);
-                factor /= 2;
-            }
-            if(factor > 1) primeFactors.add(factor);
+        for (var divisor = 2; factor > 1; divisor++) {
+            for (; factor % divisor == 0; factor /= divisor)
+                primeFactors.add(divisor);
         }
 
         return primeFactors.stream().mapToInt(Integer::intValue).toArray();
