@@ -7,7 +7,7 @@ public class PrimeFactors {
     public int[] findPrimeFactorsFor(int factor) {
         var primeFactors = new ArrayList<Integer>();
         if(factor > 1) {
-            if(factor % 2 == 0){
+            while(factor % 2 == 0){
                 primeFactors.add(2);
                 factor /= 2;
             }
